@@ -78,11 +78,11 @@ Extesiones de VCode recomendadas :
 
 Inicial servidor local:
 
-python manager.py runserver
+python manage.py runserver
 
 o
 
-python3 manager.py runserver
+python3 manage.py runserver
 
 ## Procedimientos
 
