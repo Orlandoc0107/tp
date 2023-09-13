@@ -1,45 +1,16 @@
 <!DOCTYPE html>
-
-<html>
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Django</title>
-    <meta name="description" content="" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Django CRUD</title>
+        
   </head>
   <body>
-    <nav>
-      <ul>
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/tasks">Tasks</a>
-        </li>
-        <li>
-          <a href="/tasks">Tasks</a>
-        </li>
-
-        {% if user.is_authenticated %}
-        <li>
-          <a href="/task_completed/">Tasks completed</a>
-        </li>
-        <li>
-          <a href="/logout">Logout</a>
-        </li>
-        {% else %}
-        <li>
-            <a href="/signup">Signup</a>
-        </li>
-        <li>
-          <a href="/signin">Signin</a>
-      </li>
-        {% endif %}
-      </ul>
-    </nav>
-    {% block content%} {% endblock %}
-    <script src="" async defer></script>
+    {% include '_navbar.html' %}
+    
+    {% block content %}
+    {% endblock %}
   </body>
 </html>

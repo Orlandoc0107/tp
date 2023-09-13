@@ -1,14 +1,10 @@
 # BackEnd
-cambios
 Detalles:
 
 Django 4.0.6
 Python 3.10
 
 orlandodemontero.pythonanywhere.com
-Hola como estas ? 
-prueba 2
-prueba 3 
 
 ```bash
 Creacion de un Entorno Virtual
@@ -23,17 +19,6 @@ En Windows
 > cd myproject
 > py -3 -m venv .venv
 
-si estas usando PowerShell Usar :
-
-.\Scripts\Activate.ps1
-
-si usas cmd :
-
-Scripts\activate
-
-si usas bash :
-
-source Scripts/activate
 
 NOTA: para desactivar el entorno escribir : deactivate
 Como sabes que esta activado el entorno Virtual ? en la consola debe mostrarse .venv
@@ -52,6 +37,14 @@ $ . .venv/bin/activate
 Windows
 > .venv\Scripts\activate
 
+PowerShell Usar :
+.venv\Scripts\Activate.ps1
+
+cmd :
+.venv\Scripts\activate
+
+bash :
+source venv/Scripts/activate
 ```
 
 ```bash
@@ -80,10 +73,9 @@ Extesiones de VCode recomendadas :
 Inicial servidor local:
 
 python manage.py runserver
-
 o
-
 python3 manage.py runserver
+
 
 ## Procedimientos
 
