@@ -62,7 +62,32 @@ https://www.youtube.com/watch?v=RcHl_Jitg_g
 ## Django
 
 se debe instlar los modulos de Django en tu entorno virtual:
-pip install Django==4.0.6
+
+```bash
+
+pip install Django==4.0.6 
+
+comandos ya utiliados :
+
+django-admin startproject tp .
+
+python manage.py startapp tareas
+
+python manage.py migrate
+
+pip install djangorestframework
+
+pip install django-cors-headers
+
+pip install coreapi
+
+Nota: la aplicacion se llamara tareas
+
+
+```
+
+
+
 Lo que no es necesario es crear el proyecto pues ya esta creado
 
 Extesiones de VCode recomendadas :
@@ -91,4 +116,11 @@ Username
 Email
 Password
 Password
+```
+
+
+```bash
+
+Documentacion : http://localhost:3003/tareas/docs/ 
+
 ```

@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-k76@y1)+*ab8b2+lma_oe@7b7#-r3&!6-^c2)-am%@byd@^858'
+SECRET_KEY = 'django-insecure-6v6_0@#ua%jr4sjy4ig8przm+h38#0hhja4d9=x2hy3d_n8al9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -29,7 +29,10 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
+# Agregamos nuestra aplicacion llamada tareas  y ejecutamos los siguiente
+# python manage.py migrate
+# tambien agregamos el corsheaders y rest_framework
+# agregamos modulo coreapi
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,12 +40,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'tasks'
+    'corsheaders',
+    'rest_framework',
+    'coreapi',
+    'tareas' 
 ]
 
+# tambien debemos agregar cord aqui y antes del commonMiddleware para que escuche la respuesta
+# https://pypi.org/project/django-cors-headers/
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -117,9 +126,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-LOGIN_URL = '/signin'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+#Agregamos una lista de los que se pueden conectar a esta API
+
+CORS_ALLOWED_ORIGINS = []
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
+}
