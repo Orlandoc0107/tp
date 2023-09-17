@@ -81,6 +81,7 @@ pip install django-cors-headers
 
 pip install coreapi
 
+
 Nota: la aplicacion se llamara tareas
 
 
@@ -122,5 +123,13 @@ Password
 ```bash
 
 Documentacion : http://localhost:3003/tareas/docs/ 
+
+```
+
+
+```bash
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserver
 
 ```
