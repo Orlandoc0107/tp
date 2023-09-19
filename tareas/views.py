@@ -2,17 +2,13 @@ from rest_framework import viewsets, generics, permissions
 from .models import Tarea
 from .serializers import TareaSerializer, UserRegistrationSerializer
 from django.contrib.auth.models import User
-from django.contrib.auth.models import User
-from rest_framework import generics
 from rest_framework import status
 from rest_framework.response import Response
-from django.contrib.auth import login
 from rest_framework.authtoken.models import Token
 from rest_framework.views import APIView
-from rest_framework.response import Response
 
 
-
+#Todo en Uno xD!
 class TareaViewSet(viewsets.ModelViewSet):
     serializer_class = TareaSerializer
     permission_classes = [permissions.IsAuthenticated]
