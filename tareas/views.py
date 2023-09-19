@@ -6,7 +6,9 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
 from rest_framework.views import APIView
-
+from rest_framework.permissions import AllowAny
+import json
+from django.http import HttpResponse
 
 #Todo en Uno xD!
 class TareaViewSet(viewsets.ModelViewSet):
@@ -17,10 +19,22 @@ class TareaViewSet(viewsets.ModelViewSet):
         # Solo permite al usuario ver y administrar sus propias tareas
         return Tarea.objects.filter(user=self.request.user)
 
-
+# Vista de Registro
 class UserRegistrationView(generics.CreateAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserRegistrationSerializer
+    permission_classes = (AllowAny)
+    
+    def post(self,request):
+        usuario = request.data['username']
+        email = request.data['email']
+        password = request.data['password']
+        nuevo_usuario = User.objects.create_user(usuario,email,password)
+        nuevo_usuario.save()
+        data = {'detail': 'Usuario se creo Correctamente'}
+        rpta = json.dumps(data)
+        return HttpResponse(rpta,content_type="application/json")
+    
+    # queryset = User.objects.all()
+    # serializer_class = UserRegistrationSerializer
 
 
 class UserLoginView(APIView):

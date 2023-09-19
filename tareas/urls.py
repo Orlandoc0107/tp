@@ -22,5 +22,4 @@ urlpatterns = [
     path('docs/', include_docs_urls(title="Argentina Programa API REST")),
     path('registro/', UserRegistrationView.as_view(), name='user-registration'),
     path('login/', UserLoginView.as_view(), name='user-login'),
-
 ]
