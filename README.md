@@ -73,7 +73,8 @@ django-admin startproject tp .
 
 python manage.py startapp tareas
 
-python manage.py migrate
+
+#### Librerias 
 
 pip install djangorestframework
 
@@ -82,10 +83,6 @@ pip install django-cors-headers
 pip install coreapi
 
 pip install auth-token
-
-
-Nota: la aplicacion se llamara tareas
-
 
 ```
 
@@ -114,11 +111,7 @@ error puerto ? => python manage.py runserver 3000
 
 ```bash
 python manage.py createsuperuser
-Datos que te solicitara..
-Username
-Email
-Password
-Password
+
 ```
 
 
