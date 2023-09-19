@@ -20,6 +20,6 @@ router.register(r'tareas', TareaViewSet, basename='tarea')
 urlpatterns = [
     path("", include(router.urls)),
     path('docs/', include_docs_urls(title="Argentina Programa API REST")),
-    path('registro/', UserRegistrationView.as_view(), name='user-registration'),
-    path('login/', UserLoginView.as_view(), name='user-login'),
+    path('registro/', UserRegistrationView.as_view(), name='registration'),
+    path('login/', UserLoginView.as_view(), name='login'),
 ]
