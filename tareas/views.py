@@ -7,8 +7,7 @@ from rest_framework.response import Response
 from rest_framework.authtoken.models import Token
 from rest_framework.views import APIView
 from rest_framework.permissions import AllowAny
-import json
-from django.http import HttpResponse
+
 
 #Todo en Uno xD!
 class TareaViewSet(viewsets.ModelViewSet):
@@ -16,27 +15,34 @@ class TareaViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.IsAuthenticated]
 
     def get_queryset(self):
-        # Solo permite al usuario ver y administrar sus propias tareas
         return Tarea.objects.filter(user=self.request.user)
 
 # Vista de Registro
 class UserRegistrationView(generics.CreateAPIView):
-    permission_classes = (AllowAny)
-    
-    def post(self,request):
-        usuario = request.data['username']
-        email = request.data['email']
-        password = request.data['password']
-        nuevo_usuario = User.objects.create_user(usuario,email,password)
-        nuevo_usuario.save()
-        data = {'detail': 'Usuario se creo Correctamente'}
-        rpta = json.dumps(data)
-        return HttpResponse(rpta,content_type="application/json")
-    
-    # queryset = User.objects.all()
-    # serializer_class = UserRegistrationSerializer
+    serializer_class = UserRegistrationSerializer
+
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        try:
+            serializer.is_valid(raise_exception=True)
+        except Exception as e:
+            error_message = str(e)
+            response_data = {
+                'error_message': error_message
+            }
+            return Response(response_data, status=status.HTTP_400_BAD_REQUEST)
+
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
+
+        response_data = {
+            'message': 'Usuario creado exitosamente.'
+        }
+
+        return Response(response_data, status=status.HTTP_201_CREATED, headers=headers)
 
 
+# Login de Usuario
 class UserLoginView(APIView):
     def post(self, request):
         user = request.user
