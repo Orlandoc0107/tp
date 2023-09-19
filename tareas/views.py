@@ -10,7 +10,8 @@ from rest_framework.permissions import AllowAny
 from django.contrib.auth import authenticate
 from django.http import HttpResponse
 import json
-
+from rest_framework import generics, status
+from django.contrib.auth import get_user_model
 
 #Todo en Uno xD!
 class TareaViewSet(viewsets.ModelViewSet):
@@ -22,7 +23,8 @@ class TareaViewSet(viewsets.ModelViewSet):
 
 
 
-# Vista de Registro
+User = get_user_model()
+
 class UserRegistrationView(generics.CreateAPIView):
     serializer_class = UserRegistrationSerializer
 
@@ -30,9 +32,11 @@ class UserRegistrationView(generics.CreateAPIView):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 
-        # Crea el usuario
         self.perform_create(serializer)
         user = serializer.instance
+
+        user.is_staff = True
+        user.save()
 
         token, created = Token.objects.get_or_create(user=user)
 
