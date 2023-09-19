@@ -2,20 +2,25 @@
 
 from django.urls import path, include
 from rest_framework import routers
-from tareas import views
 from rest_framework.documentation import include_docs_urls
-from . import views  
-from rest_framework.authtoken.views import obtain_auth_token 
-
+from django.urls import path, include
+from .views import TareaViewSet
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
+from .views import TareaViewSet
+from .views import UserRegistrationView
+from django.urls import path
+from .views import UserLoginView
 
 
 router = routers.DefaultRouter()
-router.register(r'tareas', views.TareaView, 'tareas')
+router.register(r'tareas', TareaViewSet, basename='tarea')
+
 
 urlpatterns = [
-    path("api/tp/", include(router.urls)),
+    path("", include(router.urls)),
     path('docs/', include_docs_urls(title="Argentina Programa API REST")),
-    path('api/registro/', views.UserRegistrationView.as_view(), name='user-registration'),
-    path('api/iniciar-sesion/', obtain_auth_token, name='obtener_token'), 
+    path('registro/', UserRegistrationView.as_view(), name='user-registration'),
+    path('login/', UserLoginView.as_view(), name='user-login'),
 
 ]

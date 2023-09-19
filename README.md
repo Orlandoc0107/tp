@@ -81,6 +81,8 @@ pip install django-cors-headers
 
 pip install coreapi
 
+pip install auth-token
+
 
 Nota: la aplicacion se llamara tareas
 
@@ -131,5 +133,9 @@ Documentacion : http://localhost:3003/tareas/docs/
 python manage.py migrate
 python manage.py createsuperuser
 python manage.py runserver
+
+
+python manage.py migrate tareas zero
+python manage.py makemigrations tareas
 
 ```
