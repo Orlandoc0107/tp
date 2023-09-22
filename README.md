@@ -1,4 +1,5 @@
-# BackEnd
+
+<!-- # BackEnd
 Detalles:
 
 Django 4.0.6
@@ -76,13 +77,15 @@ python manage.py startapp tareas
 
 #### Librerias 
 
-pip install djangorestframework
+pip install djangorestframework , esta es para backend ,
 
-pip install django-cors-headers
+pip install django-cors-headers  , conexion de api
 
-pip install coreapi
+pip install coreapi , para la documentacion.
 
 pip install auth-token
+
+pip install djangorestframework-simplejwt
 
 ```
 
@@ -123,12 +126,25 @@ Documentacion : http://localhost:3003/tareas/docs/
 
 
 ```bash
-python manage.py migrate
-python manage.py createsuperuser
+
+
 python manage.py runserver
 
-
-python manage.py migrate tareas zero
 python manage.py makemigrations tareas
 
-```
+``` -->
+
+<!-- 
+paso 1 : instalar lo necesario para crer nuestra API.
+paso 2 : crear los moldels.
+paso 3 : crear las serializaciones
+
+python manage.py migrate tareas zero
+python manage.py migrate
+python manage.py createsuperuser 
+
+paso 4 , crear las vistas . 
+paso 5 , representarlas en la urls
+
+-->
+

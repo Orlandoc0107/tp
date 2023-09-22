@@ -1,10 +1,18 @@
 [
     {
-        "label": "settings",
-        "importPath": "django.conf",
-        "description": "django.conf",
+        "label": "migrations",
+        "importPath": "django.db",
+        "description": "django.db",
         "isExtraImport": true,
-        "detail": "django.conf",
+        "detail": "django.db",
+        "documentation": {}
+    },
+    {
+        "label": "models",
+        "importPath": "django.db",
+        "description": "django.db",
+        "isExtraImport": true,
+        "detail": "django.db",
         "documentation": {}
     },
     {
@@ -32,11 +40,19 @@
         "documentation": {}
     },
     {
-        "label": "IntegrityError",
-        "importPath": "django.db",
-        "description": "django.db",
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
         "isExtraImport": true,
-        "detail": "django.db",
+        "detail": "django.conf",
+        "documentation": {}
+    },
+    {
+        "label": "settings",
+        "importPath": "django.conf",
+        "description": "django.conf",
+        "isExtraImport": true,
+        "detail": "django.conf",
         "documentation": {}
     },
     {
@@ -46,6 +62,23 @@
         "importPath": "django.db.models.deletion",
         "description": "django.db.models.deletion",
         "detail": "django.db.models.deletion",
+        "documentation": {}
+    },
+    {
+        "label": "django.utils.timezone",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "django.utils.timezone",
+        "description": "django.utils.timezone",
+        "detail": "django.utils.timezone",
+        "documentation": {}
+    },
+    {
+        "label": "admin",
+        "importPath": "django.contrib",
+        "description": "django.contrib",
+        "isExtraImport": true,
+        "detail": "django.contrib",
         "documentation": {}
     },
     {
@@ -73,14 +106,6 @@
         "documentation": {}
     },
     {
-        "label": "ModelForm",
-        "importPath": "django.forms",
-        "description": "django.forms",
-        "isExtraImport": true,
-        "detail": "django.forms",
-        "documentation": {}
-    },
-    {
         "label": "User",
         "importPath": "django.contrib.auth.models",
         "description": "django.contrib.auth.models",
@@ -94,6 +119,54 @@
         "description": "django.contrib.auth.models",
         "isExtraImport": true,
         "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
+        "label": "serializers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "routers",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "viewsets",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
+        "documentation": {}
+    },
+    {
+        "label": "generics",
+        "importPath": "rest_framework",
+        "description": "rest_framework",
+        "isExtraImport": true,
+        "detail": "rest_framework",
         "documentation": {}
     },
     {
@@ -105,91 +178,187 @@
         "documentation": {}
     },
     {
-        "label": "render",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
         "isExtraImport": true,
-        "detail": "django.shortcuts",
+        "detail": "django.urls",
         "documentation": {}
     },
     {
-        "label": "redirect",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
         "isExtraImport": true,
-        "detail": "django.shortcuts",
+        "detail": "django.urls",
         "documentation": {}
     },
     {
-        "label": "get_object_or_404",
-        "importPath": "django.shortcuts",
-        "description": "django.shortcuts",
+        "label": "path",
+        "importPath": "django.urls",
+        "description": "django.urls",
         "isExtraImport": true,
-        "detail": "django.shortcuts",
+        "detail": "django.urls",
         "documentation": {}
     },
     {
-        "label": "UserCreationForm",
-        "importPath": "django.contrib.auth.forms",
-        "description": "django.contrib.auth.forms",
+        "label": "include",
+        "importPath": "django.urls",
+        "description": "django.urls",
         "isExtraImport": true,
-        "detail": "django.contrib.auth.forms",
+        "detail": "django.urls",
         "documentation": {}
     },
     {
-        "label": "AuthenticationForm",
-        "importPath": "django.contrib.auth.forms",
-        "description": "django.contrib.auth.forms",
+        "label": "include_docs_urls",
+        "importPath": "rest_framework.documentation",
+        "description": "rest_framework.documentation",
         "isExtraImport": true,
-        "detail": "django.contrib.auth.forms",
+        "detail": "rest_framework.documentation",
         "documentation": {}
     },
     {
-        "label": "login",
-        "importPath": "django.contrib.auth",
-        "description": "django.contrib.auth",
+        "label": "views",
+        "importPath": "tareas",
+        "description": "tareas",
         "isExtraImport": true,
-        "detail": "django.contrib.auth",
+        "detail": "tareas",
         "documentation": {}
     },
     {
-        "label": "logout",
-        "importPath": "django.contrib.auth",
-        "description": "django.contrib.auth",
+        "label": "MostarTareas",
+        "importPath": "tareas.views",
+        "description": "tareas.views",
         "isExtraImport": true,
-        "detail": "django.contrib.auth",
+        "detail": "tareas.views",
         "documentation": {}
     },
     {
-        "label": "authenticate",
-        "importPath": "django.contrib.auth",
-        "description": "django.contrib.auth",
+        "label": "CrearTarea",
+        "importPath": "tareas.views",
+        "description": "tareas.views",
         "isExtraImport": true,
-        "detail": "django.contrib.auth",
+        "detail": "tareas.views",
         "documentation": {}
     },
     {
-        "label": "TIME_ZONE",
-        "importPath": "tp.settings",
-        "description": "tp.settings",
+        "label": "BorrarTarea",
+        "importPath": "tareas.views",
+        "description": "tareas.views",
         "isExtraImport": true,
-        "detail": "tp.settings",
+        "detail": "tareas.views",
         "documentation": {}
     },
     {
-        "label": "timezone",
-        "importPath": "django.utils",
-        "description": "django.utils",
+        "label": "ActualizarTarea",
+        "importPath": "tareas.views",
+        "description": "tareas.views",
         "isExtraImport": true,
-        "detail": "django.utils",
+        "detail": "tareas.views",
         "documentation": {}
     },
     {
-        "label": "login_required",
-        "importPath": "django.contrib.auth.decorators",
-        "description": "django.contrib.auth.decorators",
+        "label": "DetallesTarea",
+        "importPath": "tareas.views",
+        "description": "tareas.views",
         "isExtraImport": true,
-        "detail": "django.contrib.auth.decorators",
+        "detail": "tareas.views",
+        "documentation": {}
+    },
+    {
+        "label": "Registro",
+        "importPath": "tareas.views",
+        "description": "tareas.views",
+        "isExtraImport": true,
+        "detail": "tareas.views",
+        "documentation": {}
+    },
+    {
+        "label": "Login",
+        "importPath": "tareas.views",
+        "description": "tareas.views",
+        "isExtraImport": true,
+        "detail": "tareas.views",
+        "documentation": {}
+    },
+    {
+        "label": "Datos_user",
+        "importPath": "tareas.views",
+        "description": "tareas.views",
+        "isExtraImport": true,
+        "detail": "tareas.views",
+        "documentation": {}
+    },
+    {
+        "label": "TokenObtainPairView",
+        "importPath": "rest_framework_simplejwt.views",
+        "description": "rest_framework_simplejwt.views",
+        "isExtraImport": true,
+        "detail": "rest_framework_simplejwt.views",
+        "documentation": {}
+    },
+    {
+        "label": "TokenRefreshView",
+        "importPath": "rest_framework_simplejwt.views",
+        "description": "rest_framework_simplejwt.views",
+        "isExtraImport": true,
+        "detail": "rest_framework_simplejwt.views",
+        "documentation": {}
+    },
+    {
+        "label": "TokenVerifyView",
+        "importPath": "rest_framework_simplejwt.views",
+        "description": "rest_framework_simplejwt.views",
+        "isExtraImport": true,
+        "detail": "rest_framework_simplejwt.views",
+        "documentation": {}
+    },
+    {
+        "label": "TokenObtainPairView",
+        "importPath": "rest_framework_simplejwt.views",
+        "description": "rest_framework_simplejwt.views",
+        "isExtraImport": true,
+        "detail": "rest_framework_simplejwt.views",
+        "documentation": {}
+    },
+    {
+        "label": "Response",
+        "importPath": "rest_framework.response",
+        "description": "rest_framework.response",
+        "isExtraImport": true,
+        "detail": "rest_framework.response",
+        "documentation": {}
+    },
+    {
+        "label": "APIView",
+        "importPath": "rest_framework.views",
+        "description": "rest_framework.views",
+        "isExtraImport": true,
+        "detail": "rest_framework.views",
+        "documentation": {}
+    },
+    {
+        "label": "AllowAny",
+        "importPath": "rest_framework.permissions",
+        "description": "rest_framework.permissions",
+        "isExtraImport": true,
+        "detail": "rest_framework.permissions",
+        "documentation": {}
+    },
+    {
+        "label": "IsAuthenticated",
+        "importPath": "rest_framework.permissions",
+        "description": "rest_framework.permissions",
+        "isExtraImport": true,
+        "detail": "rest_framework.permissions",
+        "documentation": {}
+    },
+    {
+        "label": "RefreshToken",
+        "importPath": "rest_framework_simplejwt.tokens",
+        "description": "rest_framework_simplejwt.tokens",
+        "isExtraImport": true,
+        "detail": "rest_framework_simplejwt.tokens",
         "documentation": {}
     },
     {
@@ -210,35 +379,19 @@
         "documentation": {}
     },
     {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
         "label": "Path",
         "importPath": "pathlib",
         "description": "pathlib",
         "isExtraImport": true,
         "detail": "pathlib",
-        "documentation": {}
-    },
-    {
-        "label": "path",
-        "importPath": "django.urls",
-        "description": "django.urls",
-        "isExtraImport": true,
-        "detail": "django.urls",
-        "documentation": {}
-    },
-    {
-        "label": "views",
-        "importPath": "tasks",
-        "description": "tasks",
-        "isExtraImport": true,
-        "detail": "tasks",
-        "documentation": {}
-    },
-    {
-        "label": "tasks",
-        "importPath": "tasks.views",
-        "description": "tasks.views",
-        "isExtraImport": true,
-        "detail": "tasks.views",
         "documentation": {}
     },
     {
@@ -261,136 +414,154 @@
     {
         "label": "Migration",
         "kind": 6,
-        "importPath": "tasks.migrations.0001_initial",
-        "description": "tasks.migrations.0001_initial",
-        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Task',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),",
-        "detail": "tasks.migrations.0001_initial",
+        "importPath": "tareas.migrations.0001_initial",
+        "description": "tareas.migrations.0001_initial",
+        "peekOfCode": "class Migration(migrations.Migration):\n    initial = True\n    dependencies = [\n    ]\n    operations = [\n        migrations.CreateModel(\n            name='Tarea',\n            fields=[\n                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),\n                ('titulo', models.CharField(max_length=200)),",
+        "detail": "tareas.migrations.0001_initial",
         "documentation": {}
     },
     {
-        "label": "TaskAdmin",
+        "label": "Migration",
         "kind": 6,
-        "importPath": "tasks.admin",
-        "description": "tasks.admin",
-        "peekOfCode": "class TaskAdmin(admin.ModelAdmin):\n    readonly_fields = (\"created\") # creamos una clase para que pueda mostrarnos tareas\n    # admin.site.rester(Task, TaskAdmin)\n# Register your models here.\nadmin.site.register(Task, TaskAdmin) # se gere cuando se guarda y se ejecute el servidor",
-        "detail": "tasks.admin",
+        "importPath": "tareas.migrations.0002_alter_tarea_options_rename_hecho_tarea_finalizado_and_more",
+        "description": "tareas.migrations.0002_alter_tarea_options_rename_hecho_tarea_finalizado_and_more",
+        "peekOfCode": "class Migration(migrations.Migration):\n    dependencies = [\n        migrations.swappable_dependency(settings.AUTH_USER_MODEL),\n        ('tareas', '0001_initial'),\n    ]\n    operations = [\n        migrations.AlterModelOptions(\n            name='tarea',\n            options={'ordering': ['creado']},\n        ),",
+        "detail": "tareas.migrations.0002_alter_tarea_options_rename_hecho_tarea_finalizado_and_more",
         "documentation": {}
     },
     {
-        "label": "TasksConfig",
+        "label": "TareasConfig",
         "kind": 6,
-        "importPath": "tasks.apps",
-        "description": "tasks.apps",
-        "peekOfCode": "class TasksConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'tasks'",
-        "detail": "tasks.apps",
+        "importPath": "tareas.apps",
+        "description": "tareas.apps",
+        "peekOfCode": "class TareasConfig(AppConfig):\n    default_auto_field = 'django.db.models.BigAutoField'\n    name = 'tareas'",
+        "detail": "tareas.apps",
         "documentation": {}
     },
     {
-        "label": "TaskForm",
+        "label": "Tarea",
         "kind": 6,
-        "importPath": "tasks.forms",
-        "description": "tasks.forms",
-        "peekOfCode": "class TaskForm(ModelForm):\n    class Meta:\n        model = Task # le indicamos que proviene de este Molde y lo importamos\n        fields = [\"title\", 'description', 'important']",
-        "detail": "tasks.forms",
+        "importPath": "tareas.models",
+        "description": "tareas.models",
+        "peekOfCode": "class Tarea(models.Model):\n    titulo = models.CharField(max_length=200)\n    descripcion = models.TextField(max_length=1000)\n    creado = models.DateTimeField(auto_now_add=True)\n    finalizado = models.BooleanField(default=False)\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\n    class Meta:\n        ordering = ('titulo',)\n        verbose_name = 'Tarea'\n        verbose_name_plural = 'Tareas'",
+        "detail": "tareas.models",
         "documentation": {}
     },
     {
-        "label": "Task",
+        "label": "TareaSerializer",
         "kind": 6,
-        "importPath": "tasks.models",
-        "description": "tasks.models",
-        "peekOfCode": "class Task(models.Model):\n    title = models.CharField(max_length=100) # maximo de 100 caracteres\n    descripction = models.TextField(blank=True) # textoslargos puede aceptar campos vacios\n    created = models.DateTimeField(auto_now_add=True) # si no s ele pasa datos automaticmanete puede guardar la fecha \n    datecompleted = models.DateTimeField(null=True, blank=True ) # sera un campo vacio inicialmente , fecha que se realizo la tarea\n    important = models.BooleanField(default=False) # Campo importante por defecto sera Falso ,el usuario puede marcarla importante \n    user = models.ForeignKey(User, on_delete=models.CASCADE) # CASCADE si borra un campo borra todo. \n    def __str__(self):\n        return self.title + '- by' + self.user.username #Para que retorna su propio titulotitulo\n    # se debe ejecutar, Python mange.py makemigrations ",
-        "detail": "tasks.models",
+        "importPath": "tareas.serializers",
+        "description": "tareas.serializers",
+        "peekOfCode": "class TareaSerializer(serializers.ModelSerializer):\n    class Meta:\n        model = Tarea\n        fields = '__all__'\n    read_only_fields = (\n        'id',\n        'created_at',\n        'updated_at'\n        )\n# Class para Usuario",
+        "detail": "tareas.serializers",
         "documentation": {}
     },
     {
-        "label": "home",
-        "kind": 2,
-        "importPath": "tasks.views",
-        "description": "tasks.views",
-        "peekOfCode": "def home(request):\n    return render(request, 'home.html')\ndef signup(request):\n    if request.method == 'GET':\n        return render(request, 'signup.html',{\n            'form': UserCreationForm\n            })\n    else:\n        if request.POST['password1'] == request.POST['password2']:\n            # regitro de usuario",
-        "detail": "tasks.views",
+        "label": "UserRegistrationSerializer",
+        "kind": 6,
+        "importPath": "tareas.serializers",
+        "description": "tareas.serializers",
+        "peekOfCode": "class UserRegistrationSerializer(serializers.ModelSerializer):\n    password = serializers.CharField(write_only=True, required=True, style={'input_type': 'password'})\n    class Meta:\n        model = User\n        fields = ('username', 'password', 'email', 'first_name', 'last_name')\n    def create(self, validated_data):\n        user = User.objects.create_user(\n            username=validated_data['username'],\n            password=validated_data['password'],\n            email=validated_data['email'],",
+        "detail": "tareas.serializers",
         "documentation": {}
     },
     {
-        "label": "signup",
-        "kind": 2,
-        "importPath": "tasks.views",
-        "description": "tasks.views",
-        "peekOfCode": "def signup(request):\n    if request.method == 'GET':\n        return render(request, 'signup.html',{\n            'form': UserCreationForm\n            })\n    else:\n        if request.POST['password1'] == request.POST['password2']:\n            # regitro de usuario\n            try:\n                user = User.objects.create_user(",
-        "detail": "tasks.views",
+        "label": "router",
+        "kind": 5,
+        "importPath": "tareas.urls",
+        "description": "tareas.urls",
+        "peekOfCode": "router = routers.DefaultRouter()\nrouter.register(r'tareas', views.TareaViewSet, basename='tarea')\nurlpatterns = [\n       path('admin/', admin.site.urls),\n       path('docs/', include_docs_urls(title=\"API Rest\")),\n       path('detalles-tarea/<int:pk>/', DetallesTarea.as_view()), #GET\n       path('mostrar-tareas/', MostarTareas.as_view()), # GET\n       path('crear-tarea/', CrearTarea.as_view()), # POST\n       path('borrar-tarea/<int:pk>/', BorrarTarea.as_view()), # DELETE / pk= es la id de la tarea en la url\n       path('actualiza-tarea/<int:pk>/', ActualizarTarea.as_view()), # PUT / pk= es id de la tarea en la url",
+        "detail": "tareas.urls",
         "documentation": {}
     },
     {
-        "label": "tasks",
-        "kind": 2,
-        "importPath": "tasks.views",
-        "description": "tasks.views",
-        "peekOfCode": "def tasks(request):\n    tasks = Task.objects.filter(user=request.user, datecompleted_isnull=True)\n    return render(request, 'tasks.html', {\n        'tasks': tasks\n    })\n@login_required \ndef signout(request):\n    logout(request)\n    return redirect('home')\ndef signin(request):",
-        "detail": "tasks.views",
+        "label": "urlpatterns",
+        "kind": 5,
+        "importPath": "tareas.urls",
+        "description": "tareas.urls",
+        "peekOfCode": "urlpatterns = [\n       path('admin/', admin.site.urls),\n       path('docs/', include_docs_urls(title=\"API Rest\")),\n       path('detalles-tarea/<int:pk>/', DetallesTarea.as_view()), #GET\n       path('mostrar-tareas/', MostarTareas.as_view()), # GET\n       path('crear-tarea/', CrearTarea.as_view()), # POST\n       path('borrar-tarea/<int:pk>/', BorrarTarea.as_view()), # DELETE / pk= es la id de la tarea en la url\n       path('actualiza-tarea/<int:pk>/', ActualizarTarea.as_view()), # PUT / pk= es id de la tarea en la url\n       path('registro/', Registro.as_view(), name='register'), \n       path('ingresar/', Login.as_view()),",
+        "detail": "tareas.urls",
         "documentation": {}
     },
     {
-        "label": "signout",
-        "kind": 2,
-        "importPath": "tasks.views",
-        "description": "tasks.views",
-        "peekOfCode": "def signout(request):\n    logout(request)\n    return redirect('home')\ndef signin(request):\n    if request.method == 'GET':\n        return render(request, 'signin.html',{\n        'form': AuthenticationForm          \n    })\n    else:\n        user = authenticate(",
-        "detail": "tasks.views",
+        "label": "TareaViewSet",
+        "kind": 6,
+        "importPath": "tareas.views",
+        "description": "tareas.views",
+        "peekOfCode": "class TareaViewSet(viewsets.ModelViewSet): # ModelViewSet se usa importando (from rest_framework import viewsets)\n    queryset = Tarea.objects.all()  #especificar qué conjunto de datos se debe consultar de la base de datos\n    serializer_class = TareaSerializer # eindicamos cuales son los datos que usaremos y estan serializados\n#mostrar todas las Tareas \nclass MostarTareas(APIView): #APIView es un modulo que traeDjango para facilitar la Vistas en una APIREST.\n    def get(self,request):\n        tareas = Tarea.objects.all().order_by('titulo')\n        serializer = TareaSerializer(tareas, many = True)\n        return Response(serializer.data, status=status.HTTP_200_OK) \n# Crear Tarea",
+        "detail": "tareas.views",
         "documentation": {}
     },
     {
-        "label": "signin",
-        "kind": 2,
-        "importPath": "tasks.views",
-        "description": "tasks.views",
-        "peekOfCode": "def signin(request):\n    if request.method == 'GET':\n        return render(request, 'signin.html',{\n        'form': AuthenticationForm          \n    })\n    else:\n        user = authenticate(\n            request, username=request.POST['usename'], pasword=request.POST\n            ['password'])\n        if user is None:",
-        "detail": "tasks.views",
+        "label": "MostarTareas",
+        "kind": 6,
+        "importPath": "tareas.views",
+        "description": "tareas.views",
+        "peekOfCode": "class MostarTareas(APIView): #APIView es un modulo que traeDjango para facilitar la Vistas en una APIREST.\n    def get(self,request):\n        tareas = Tarea.objects.all().order_by('titulo')\n        serializer = TareaSerializer(tareas, many = True)\n        return Response(serializer.data, status=status.HTTP_200_OK) \n# Crear Tarea\nclass CrearTarea(APIView):\n    def post(self, request, format=None):\n        serializer = TareaSerializer(data=request.data) \n        if serializer.is_valid(): ",
+        "detail": "tareas.views",
         "documentation": {}
     },
     {
-        "label": "create_task",
-        "kind": 2,
-        "importPath": "tasks.views",
-        "description": "tasks.views",
-        "peekOfCode": "def create_task(request):\n    if request.method == 'GET':\n        return render(request, 'create_task.html',{\n        'form': TaskForm\n    })\n    else:\n        try:\n            form = TaskForm(request.POST)\n            new_task = form.save(commit=False)\n            new_task.user = request.user ",
-        "detail": "tasks.views",
+        "label": "CrearTarea",
+        "kind": 6,
+        "importPath": "tareas.views",
+        "description": "tareas.views",
+        "peekOfCode": "class CrearTarea(APIView):\n    def post(self, request, format=None):\n        serializer = TareaSerializer(data=request.data) \n        if serializer.is_valid(): \n            serializer.save() \n            return Response(serializer.data, status=status.HTTP_201_CREATED) \n        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)\n# Borrar Tarea\nclass BorrarTarea(APIView):\n    def delete(self, request, pk):",
+        "detail": "tareas.views",
         "documentation": {}
     },
     {
-        "label": "task_detail",
-        "kind": 2,
-        "importPath": "tasks.views",
-        "description": "tasks.views",
-        "peekOfCode": "def task_detail(request, task_id):\n    if request.method == 'GET':\n        task = get_object_or_404(Task, pk=task_id)\n        form = TaskForm(instance=task) # Para Actualizar la Tareas\n        return render(request, 'task_detail.html', {'task': task, 'form': form})\n    else:\n        try:\n            task = get_object_or_404(Task, pk=task_id, user=request.user)\n            form = TaskForm(request.POST, instance=Task)\n            form.save()",
-        "detail": "tasks.views",
+        "label": "BorrarTarea",
+        "kind": 6,
+        "importPath": "tareas.views",
+        "description": "tareas.views",
+        "peekOfCode": "class BorrarTarea(APIView):\n    def delete(self, request, pk):\n        try:\n            tarea = Tarea.objects.get(pk=pk)\n            serializer = TareaSerializer(tarea)\n            tarea.delete()\n            return Response(serializer.data, status=status.HTTP_200_OK)\n        except Tarea.DoesNotExist:\n            return Response({\"error\": \"La tarea no existe\"}, status=status.HTTP_404_NOT_FOUND)\n        except Exception as e:",
+        "detail": "tareas.views",
         "documentation": {}
     },
     {
-        "label": "complete_task",
-        "kind": 2,
-        "importPath": "tasks.views",
-        "description": "tasks.views",
-        "peekOfCode": "def complete_task(request, task_id):\n    task = get_object_or_404(Task, pk=task_id, user=request.user)\n    if request.method == 'POST':\n        task.datacompleted = timezone.now\n        task.save()\n        return redirect('tasks')\n@login_required \ndef complete_task(request, task_id):\n    task = get_object_or_404(Task, pk=task_id, user=request.user)\n    if request.method == 'POST':",
-        "detail": "tasks.views",
+        "label": "DetallesTarea",
+        "kind": 6,
+        "importPath": "tareas.views",
+        "description": "tareas.views",
+        "peekOfCode": "class DetallesTarea(APIView): \n    def get(self, request, pk): \n        tarea = Tarea.objects.filter(pk=pk).first()\n        serializer = TareaSerializer(tarea) \n        if tarea: \n            return Response(serializer.data, status=status.HTTP_200_OK) \n        return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)\n#actualizar tarea\nclass ActualizarTarea(APIView):\n    def put(self, request, pk):",
+        "detail": "tareas.views",
         "documentation": {}
     },
     {
-        "label": "complete_task",
-        "kind": 2,
-        "importPath": "tasks.views",
-        "description": "tasks.views",
-        "peekOfCode": "def complete_task(request, task_id):\n    task = get_object_or_404(Task, pk=task_id, user=request.user)\n    if request.method == 'POST':\n        task.delete()\n        return redirect('tasks')\n@login_required   \ndef tasks_completed(request):\n    tasks = Task.objects.filter(user=request.user, datecompleted_isnull=True)\n    ('-datecompleted') \n    return render(request, 'tasks.html', {'tasks': tasks})",
-        "detail": "tasks.views",
+        "label": "ActualizarTarea",
+        "kind": 6,
+        "importPath": "tareas.views",
+        "description": "tareas.views",
+        "peekOfCode": "class ActualizarTarea(APIView):\n    def put(self, request, pk):\n        tarea = Tarea.objects.filter(pk=pk).first()\n        serializer = TareaSerializer(tarea,data=request.data)\n        if serializer.is_valid():\n            serializer.save()\n            return  Response(serializer.data, status=status.HTTP_200_OK)\n        return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)\n# Registro\nclass Registro(generics.CreateAPIView):",
+        "detail": "tareas.views",
         "documentation": {}
     },
     {
-        "label": "tasks_completed",
-        "kind": 2,
-        "importPath": "tasks.views",
-        "description": "tasks.views",
-        "peekOfCode": "def tasks_completed(request):\n    tasks = Task.objects.filter(user=request.user, datecompleted_isnull=True)\n    ('-datecompleted') \n    return render(request, 'tasks.html', {'tasks': tasks})",
-        "detail": "tasks.views",
+        "label": "Registro",
+        "kind": 6,
+        "importPath": "tareas.views",
+        "description": "tareas.views",
+        "peekOfCode": "class Registro(generics.CreateAPIView):\n    queryset = User.objects.all()\n    serializer_class = UserRegistrationSerializer\n    permission_classes = [AllowAny]\n    def post(self, request, *args, **kwargs):\n        serializer = self.get_serializer(data=request.data)\n        serializer.is_valid(raise_exception=True)\n        user = serializer.save()\n        refresh = RefreshToken.for_user(user)\n        data = {",
+        "detail": "tareas.views",
+        "documentation": {}
+    },
+    {
+        "label": "Login",
+        "kind": 6,
+        "importPath": "tareas.views",
+        "description": "tareas.views",
+        "peekOfCode": "class Login(TokenObtainPairView):\n    # Agrega cualquier lógica personalizada aquí, si es necesario\n    # Por ejemplo, puedes personalizar la respuesta JSON\n    def post(self, request, *args, **kwargs):\n        response = super().post(request, *args, **kwargs)\n        # Aquí puedes modificar la respuesta JSON según tus necesidades\n        # Por ejemplo, agregar datos adicionales al JSON de respuesta\n        if response.status_code == 200:\n            user = self.user\n            response.data['user_id'] = user.id",
+        "detail": "tareas.views",
+        "documentation": {}
+    },
+    {
+        "label": "Datos_user",
+        "kind": 6,
+        "importPath": "tareas.views",
+        "description": "tareas.views",
+        "peekOfCode": "class Datos_user(APIView):\n    permission_classes = [IsAuthenticated]\n    def get(self, request):\n        user = request.user\n        user_data = {\n            'id': user.id,\n            'username': user.username,\n            'email': user.email,\n        }\n        return Response(user_data, status=status.HTTP_200_OK)",
+        "detail": "tareas.views",
         "documentation": {}
     },
     {
@@ -407,7 +578,7 @@
         "kind": 5,
         "importPath": "tp.settings",
         "description": "tp.settings",
-        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-k76@y1)+*ab8b2+lma_oe@7b7#-r3&!6-^c2)-am%@byd@^858'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [",
+        "peekOfCode": "BASE_DIR = Path(__file__).resolve().parent.parent\n# Quick-start development settings - unsuitable for production\n# See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/\n# SECURITY WARNING: keep the secret key used in production secret!\nSECRET_KEY = 'django-insecure-6v6_0@#ua%jr4sjy4ig8przm+h38#0hhja4d9=x2hy3d_n8al9'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\n# Agregamos nuestra aplicacion llamada tareas  y ejecutamos los siguiente",
         "detail": "tp.settings",
         "documentation": {}
     },
@@ -416,7 +587,7 @@
         "kind": 5,
         "importPath": "tp.settings",
         "description": "tp.settings",
-        "peekOfCode": "SECRET_KEY = 'django-insecure-k76@y1)+*ab8b2+lma_oe@7b7#-r3&!6-^c2)-am%@byd@^858'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',",
+        "peekOfCode": "SECRET_KEY = 'django-insecure-6v6_0@#ua%jr4sjy4ig8przm+h38#0hhja4d9=x2hy3d_n8al9'\n# SECURITY WARNING: don't run with debug turned on in production!\nDEBUG = True\nALLOWED_HOSTS = []\n# Application definition\n# Agregamos nuestra aplicacion llamada tareas  y ejecutamos los siguiente\n# python manage.py migrate\n# tambien agregamos el corsheaders y rest_framework\n# agregamos modulo coreapi\nINSTALLED_APPS = [",
         "detail": "tp.settings",
         "documentation": {}
     },
@@ -425,7 +596,7 @@
         "kind": 5,
         "importPath": "tp.settings",
         "description": "tp.settings",
-        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',",
+        "peekOfCode": "DEBUG = True\nALLOWED_HOSTS = []\n# Application definition\n# Agregamos nuestra aplicacion llamada tareas  y ejecutamos los siguiente\n# python manage.py migrate\n# tambien agregamos el corsheaders y rest_framework\n# agregamos modulo coreapi\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',",
         "detail": "tp.settings",
         "documentation": {}
     },
@@ -434,7 +605,7 @@
         "kind": 5,
         "importPath": "tp.settings",
         "description": "tp.settings",
-        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'tasks'",
+        "peekOfCode": "ALLOWED_HOSTS = []\n# Application definition\n# Agregamos nuestra aplicacion llamada tareas  y ejecutamos los siguiente\n# python manage.py migrate\n# tambien agregamos el corsheaders y rest_framework\n# agregamos modulo coreapi\nINSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',",
         "detail": "tp.settings",
         "documentation": {}
     },
@@ -443,7 +614,7 @@
         "kind": 5,
         "importPath": "tp.settings",
         "description": "tp.settings",
-        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'tasks'\n]\nMIDDLEWARE = [",
+        "peekOfCode": "INSTALLED_APPS = [\n    'django.contrib.admin',\n    'django.contrib.auth',\n    'django.contrib.contenttypes',\n    'django.contrib.sessions',\n    'django.contrib.messages',\n    'django.contrib.staticfiles',\n    'corsheaders',\n    'rest_framework',\n    'rest_framework.authtoken',",
         "detail": "tp.settings",
         "documentation": {}
     },
@@ -452,7 +623,7 @@
         "kind": 5,
         "importPath": "tp.settings",
         "description": "tp.settings",
-        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]\nROOT_URLCONF = 'tp.urls'",
+        "peekOfCode": "MIDDLEWARE = [\n    'django.middleware.security.SecurityMiddleware',\n    'django.contrib.sessions.middleware.SessionMiddleware',\n     #\"corsheaders.middleware.CorsMiddleware\",\n    'django.middleware.common.CommonMiddleware',\n    'django.middleware.csrf.CsrfViewMiddleware',\n    'django.contrib.auth.middleware.AuthenticationMiddleware',\n    'django.contrib.messages.middleware.MessageMiddleware',\n    'django.middleware.clickjacking.XFrameOptionsMiddleware',\n]",
         "detail": "tp.settings",
         "documentation": {}
     },
@@ -506,7 +677,7 @@
         "kind": 5,
         "importPath": "tp.settings",
         "description": "tp.settings",
-        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.0/howto/static-files/\nSTATIC_URL = 'static/'\nLOGIN_URL = '/signin'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field",
+        "peekOfCode": "LANGUAGE_CODE = 'en-us'\nTIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
         "detail": "tp.settings",
         "documentation": {}
     },
@@ -515,7 +686,7 @@
         "kind": 5,
         "importPath": "tp.settings",
         "description": "tp.settings",
-        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.0/howto/static-files/\nSTATIC_URL = 'static/'\nLOGIN_URL = '/signin'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "TIME_ZONE = 'UTC'\nUSE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n#Agregamos una lista de los que se pueden conectar a esta API",
         "detail": "tp.settings",
         "documentation": {}
     },
@@ -524,7 +695,7 @@
         "kind": 5,
         "importPath": "tp.settings",
         "description": "tp.settings",
-        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.0/howto/static-files/\nSTATIC_URL = 'static/'\nLOGIN_URL = '/signin'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "USE_I18N = True\nUSE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n#Agregamos una lista de los que se pueden conectar a esta API\n#CORS_ALLOWED_ORIGINS = []",
         "detail": "tp.settings",
         "documentation": {}
     },
@@ -533,7 +704,7 @@
         "kind": 5,
         "importPath": "tp.settings",
         "description": "tp.settings",
-        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.0/howto/static-files/\nSTATIC_URL = 'static/'\nLOGIN_URL = '/signin'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "USE_TZ = True\n# Static files (CSS, JavaScript, Images)\n# https://docs.djangoproject.com/en/4.0/howto/static-files/\nSTATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n#Agregamos una lista de los que se pueden conectar a esta API\n#CORS_ALLOWED_ORIGINS = []\nREST_FRAMEWORK = {",
         "detail": "tp.settings",
         "documentation": {}
     },
@@ -542,16 +713,7 @@
         "kind": 5,
         "importPath": "tp.settings",
         "description": "tp.settings",
-        "peekOfCode": "STATIC_URL = 'static/'\nLOGIN_URL = '/signin'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
-        "detail": "tp.settings",
-        "documentation": {}
-    },
-    {
-        "label": "LOGIN_URL",
-        "kind": 5,
-        "importPath": "tp.settings",
-        "description": "tp.settings",
-        "peekOfCode": "LOGIN_URL = '/signin'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "STATIC_URL = 'static/'\n# Default primary key field type\n# https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field\nDEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n#Agregamos una lista de los que se pueden conectar a esta API\n#CORS_ALLOWED_ORIGINS = []\nREST_FRAMEWORK = {\n     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',\n     'DEFAULT_AUTHENTICATION_CLASSES': (\n         'rest_framework_simplejwt.authentication.JWTAuthentication',",
         "detail": "tp.settings",
         "documentation": {}
     },
@@ -560,7 +722,34 @@
         "kind": 5,
         "importPath": "tp.settings",
         "description": "tp.settings",
-        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'",
+        "peekOfCode": "DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\n#Agregamos una lista de los que se pueden conectar a esta API\n#CORS_ALLOWED_ORIGINS = []\nREST_FRAMEWORK = {\n     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',\n     'DEFAULT_AUTHENTICATION_CLASSES': (\n         'rest_framework_simplejwt.authentication.JWTAuthentication',\n    ),\n}\nSIMPLE_JWT = {",
+        "detail": "tp.settings",
+        "documentation": {}
+    },
+    {
+        "label": "#CORS_ALLOWED_ORIGINS",
+        "kind": 5,
+        "importPath": "tp.settings",
+        "description": "tp.settings",
+        "peekOfCode": "#CORS_ALLOWED_ORIGINS = []\nREST_FRAMEWORK = {\n     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',\n     'DEFAULT_AUTHENTICATION_CLASSES': (\n         'rest_framework_simplejwt.authentication.JWTAuthentication',\n    ),\n}\nSIMPLE_JWT = {\n    \"ACCESS_TOKEN_LIFETIME\": timedelta(minutes=30),  # Cambiado a 30 minutos\n    \"REFRESH_TOKEN_LIFETIME\": timedelta(days=1),     # Mantiene 1 día",
+        "detail": "tp.settings",
+        "documentation": {}
+    },
+    {
+        "label": "REST_FRAMEWORK",
+        "kind": 5,
+        "importPath": "tp.settings",
+        "description": "tp.settings",
+        "peekOfCode": "REST_FRAMEWORK = {\n     'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',\n     'DEFAULT_AUTHENTICATION_CLASSES': (\n         'rest_framework_simplejwt.authentication.JWTAuthentication',\n    ),\n}\nSIMPLE_JWT = {\n    \"ACCESS_TOKEN_LIFETIME\": timedelta(minutes=30),  # Cambiado a 30 minutos\n    \"REFRESH_TOKEN_LIFETIME\": timedelta(days=1),     # Mantiene 1 día\n    \"ROTATE_REFRESH_TOKENS\": False,",
+        "detail": "tp.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SIMPLE_JWT",
+        "kind": 5,
+        "importPath": "tp.settings",
+        "description": "tp.settings",
+        "peekOfCode": "SIMPLE_JWT = {\n    \"ACCESS_TOKEN_LIFETIME\": timedelta(minutes=30),  # Cambiado a 30 minutos\n    \"REFRESH_TOKEN_LIFETIME\": timedelta(days=1),     # Mantiene 1 día\n    \"ROTATE_REFRESH_TOKENS\": False,\n    \"BLACKLIST_AFTER_ROTATION\": False,\n    \"UPDATE_LAST_LOGIN\": False,\n    \"ALGORITHM\": \"HS256\",\n    \"SIGNING_KEY\": settings.SECRET_KEY,\n    \"VERIFYING_KEY\": \"\",\n    \"AUDIENCE\": None,",
         "detail": "tp.settings",
         "documentation": {}
     },
@@ -569,7 +758,7 @@
         "kind": 5,
         "importPath": "tp.urls",
         "description": "tp.urls",
-        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('', views.home, name='home'),\n    path('signup/', views.signup, name='signup'),\n    path('tasks/', views.tasks, name='tasks'),\n    path('logout/', views.signout, name='logout'),\n    path('signin/', views.signin, name='signin'),\n    path('tasks_completed', views.tasks_completed, name='task_completed'),\n    path('tasks/create', views.create_task, name='create_task'),\n    path('tasks/<int:task_id>', views.task_detail, name='task_detail'),",
+        "peekOfCode": "urlpatterns = [\n    path('admin/', admin.site.urls),\n    path('tareas/', include('tareas.urls')) \n]",
         "detail": "tp.urls",
         "documentation": {}
     },
