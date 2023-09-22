@@ -1,5 +1,4 @@
-
-<!-- # BackEnd
+# BackEnd
 Detalles:
 
 Django 4.0.6
@@ -22,10 +21,10 @@ En Windows
 
 
 NOTA: para desactivar el entorno escribir : deactivate
-Como sabes que esta activado el entorno Virtual ? en la consola debe mostrarse .venv
+Como sabes que esta activado el entorno Virtual ? en la consola debe mostrarse (.venv)
 ```
 
-Nota: Esperar a que el entorno se cre , veras una carpeta dentro de tu proyecto llamada .venv
+Nota: Esperar a que el entorno se cree , veras una carpeta dentro de tu proyecto llamada .venv
 Esta carpeta sea agregada al archivo de .gitignore ya que En Pythonanywhere tiene su propio entorno virtual
 si no tienes tu entorno virtual en tu pc crealo si ya lo tienes creado entonces no te preocupes .
 
@@ -62,7 +61,7 @@ https://www.youtube.com/watch?v=RcHl_Jitg_g
 
 ## Django
 
-se debe instlar los modulos de Django en tu entorno virtual:
+se debe instalar los modulos de Django en tu entorno virtual:
 
 ```bash
 
@@ -75,23 +74,7 @@ django-admin startproject tp .
 python manage.py startapp tareas
 
 
-#### Librerias 
-
-pip install djangorestframework , esta es para backend ,
-
-pip install django-cors-headers  , conexion de api
-
-pip install coreapi , para la documentacion.
-
-pip install auth-token
-
-pip install djangorestframework-simplejwt
-
 ```
-
-
-
-Lo que no es necesario es crear el proyecto pues ya esta creado
 
 Extesiones de VCode recomendadas :
 
@@ -107,8 +90,8 @@ python3 manage.py runserver
 
 ## Procedimientos
 
-manage.py startapp
-error puerto ? => python manage.py runserver 3000
+
+error puerto ? , utiliza -->  python manage.py runserver 3000
 
 ## Creacion de super usuario admin
 
@@ -126,18 +109,29 @@ Documentacion : http://localhost:3003/tareas/docs/
 
 
 ```bash
-
-
 python manage.py runserver
 
 python manage.py makemigrations tareas
 
-``` -->
+```
 
-<!-- 
+```bash
+ 
 paso 1 : instalar lo necesario para crer nuestra API.
+
+pip install djangorestframework , esta es para backend ,
+
+pip install django-cors-headers  , conexion de api
+
+pip install coreapi , para la documentacion.
+
+pip install djangorestframework-simplejwt 
+
+
 paso 2 : crear los moldels.
 paso 3 : crear las serializaciones
+
+una vez creadas las serializaciones y moldels podemos migrar nuestra base de datos.
 
 python manage.py migrate tareas zero
 python manage.py migrate
@@ -146,5 +140,4 @@ python manage.py createsuperuser
 paso 4 , crear las vistas . 
 paso 5 , representarlas en la urls
 
--->
-
+```
