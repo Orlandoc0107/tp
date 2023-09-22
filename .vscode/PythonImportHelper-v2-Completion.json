@@ -282,38 +282,6 @@
         "documentation": {}
     },
     {
-        "label": "TokenObtainPairView",
-        "importPath": "rest_framework_simplejwt.views",
-        "description": "rest_framework_simplejwt.views",
-        "isExtraImport": true,
-        "detail": "rest_framework_simplejwt.views",
-        "documentation": {}
-    },
-    {
-        "label": "TokenRefreshView",
-        "importPath": "rest_framework_simplejwt.views",
-        "description": "rest_framework_simplejwt.views",
-        "isExtraImport": true,
-        "detail": "rest_framework_simplejwt.views",
-        "documentation": {}
-    },
-    {
-        "label": "TokenVerifyView",
-        "importPath": "rest_framework_simplejwt.views",
-        "description": "rest_framework_simplejwt.views",
-        "isExtraImport": true,
-        "detail": "rest_framework_simplejwt.views",
-        "documentation": {}
-    },
-    {
-        "label": "TokenObtainPairView",
-        "importPath": "rest_framework_simplejwt.views",
-        "description": "rest_framework_simplejwt.views",
-        "isExtraImport": true,
-        "detail": "rest_framework_simplejwt.views",
-        "documentation": {}
-    },
-    {
         "label": "Response",
         "importPath": "rest_framework.response",
         "description": "rest_framework.response",
@@ -351,6 +319,14 @@
         "description": "rest_framework_simplejwt.tokens",
         "isExtraImport": true,
         "detail": "rest_framework_simplejwt.tokens",
+        "documentation": {}
+    },
+    {
+        "label": "TokenObtainPairView",
+        "importPath": "rest_framework_simplejwt.views",
+        "description": "rest_framework_simplejwt.views",
+        "isExtraImport": true,
+        "detail": "rest_framework_simplejwt.views",
         "documentation": {}
     },
     {
@@ -461,7 +437,7 @@
         "kind": 6,
         "importPath": "tareas.serializers",
         "description": "tareas.serializers",
-        "peekOfCode": "class UserRegistrationSerializer(serializers.ModelSerializer):\n    password = serializers.CharField(write_only=True, required=True, style={'input_type': 'password'})\n    class Meta:\n        model = User\n        fields = ('username', 'password', 'email', 'first_name', 'last_name')\n    def create(self, validated_data):\n        user = User.objects.create_user(\n            username=validated_data['username'],\n            password=validated_data['password'],\n            #email=validated_data['email'],",
+        "peekOfCode": "class UserRegistrationSerializer(serializers.ModelSerializer):\n    password = serializers.CharField(write_only=True, required=True, style={'input_type': 'password'})\n    class Meta:\n        model = User\n        fields = ('username', 'password', 'email', 'first_name', 'last_name')\n        def create(self, validated_data):\n            user = User.objects.create_user(\n            username=validated_data['username'],\n            password=validated_data['password'],\n            email=validated_data['email'],",
         "detail": "tareas.serializers",
         "documentation": {}
     },
