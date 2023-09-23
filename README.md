@@ -1,10 +1,10 @@
 # BackEnd
 Detalles:
 
+Online : http://orlandodemontero.pythonanywhere.com/tareas/docs/ 
+
 Django 4.0.6
 Python 3.10
-
-orlandodemontero.pythonanywhere.com
 
 ```bash
 Creacion de un Entorno Virtual
