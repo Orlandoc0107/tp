@@ -1,10 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
 
-# # segundo paso  crear nuestro models ,En estaparte se uso el user por defecto de Django.
-
-# #Creacion de Models de Tarea y se uso como ForeignKey el User de Django pro defecto
-
 class Tarea(models.Model):
     titulo = models.CharField(max_length=200)
     descripcion = models.TextField(max_length=1000)

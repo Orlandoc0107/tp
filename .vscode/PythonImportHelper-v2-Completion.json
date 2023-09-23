@@ -122,14 +122,6 @@
         "documentation": {}
     },
     {
-        "label": "User",
-        "importPath": "django.contrib.auth.models",
-        "description": "django.contrib.auth.models",
-        "isExtraImport": true,
-        "detail": "django.contrib.auth.models",
-        "documentation": {}
-    },
-    {
         "label": "serializers",
         "importPath": "rest_framework",
         "description": "rest_framework",
@@ -155,14 +147,6 @@
     },
     {
         "label": "status",
-        "importPath": "rest_framework",
-        "description": "rest_framework",
-        "isExtraImport": true,
-        "detail": "rest_framework",
-        "documentation": {}
-    },
-    {
-        "label": "generics",
         "importPath": "rest_framework",
         "description": "rest_framework",
         "isExtraImport": true,
@@ -298,43 +282,19 @@
         "documentation": {}
     },
     {
-        "label": "AllowAny",
-        "importPath": "rest_framework.permissions",
-        "description": "rest_framework.permissions",
-        "isExtraImport": true,
-        "detail": "rest_framework.permissions",
-        "documentation": {}
-    },
-    {
-        "label": "IsAuthenticated",
-        "importPath": "rest_framework.permissions",
-        "description": "rest_framework.permissions",
-        "isExtraImport": true,
-        "detail": "rest_framework.permissions",
-        "documentation": {}
-    },
-    {
-        "label": "RefreshToken",
-        "importPath": "rest_framework_simplejwt.tokens",
-        "description": "rest_framework_simplejwt.tokens",
-        "isExtraImport": true,
-        "detail": "rest_framework_simplejwt.tokens",
-        "documentation": {}
-    },
-    {
-        "label": "TokenObtainPairView",
-        "importPath": "rest_framework_simplejwt.views",
-        "description": "rest_framework_simplejwt.views",
-        "isExtraImport": true,
-        "detail": "rest_framework_simplejwt.views",
-        "documentation": {}
-    },
-    {
         "label": "authenticate",
         "importPath": "django.contrib.auth",
         "description": "django.contrib.auth",
         "isExtraImport": true,
         "detail": "django.contrib.auth",
+        "documentation": {}
+    },
+    {
+        "label": "CreateAPIView",
+        "importPath": "rest_framework.generics",
+        "description": "rest_framework.generics",
+        "isExtraImport": true,
+        "detail": "rest_framework.generics",
         "documentation": {}
     },
     {
@@ -437,7 +397,7 @@
         "kind": 6,
         "importPath": "tareas.serializers",
         "description": "tareas.serializers",
-        "peekOfCode": "class UserRegistrationSerializer(serializers.ModelSerializer):\n    password = serializers.CharField(write_only=True, required=True, style={'input_type': 'password'})\n    class Meta:\n        model = User\n        fields = ('username', 'password', 'email', 'first_name', 'last_name')\n        def create(self, validated_data):\n            user = User.objects.create_user(\n            username=validated_data['username'],\n            password=validated_data['password'],\n            email=validated_data['email'],",
+        "peekOfCode": "class UserRegistrationSerializer(serializers.ModelSerializer):\n    #Campos que obligatoriamente debe ser completados.\n    password = serializers.CharField(write_only=True, required=True, style={'input_type': 'password'})\n    email = serializers.EmailField(required=True)\n    username = serializers.CharField(required=True)\n    first_name = serializers.CharField(required=True)\n    last_name = serializers.CharField(required=True)\n    class Meta:\n        model = User\n        fields = ('username', 'password', 'email', 'first_name', 'last_name')",
         "detail": "tareas.serializers",
         "documentation": {}
     },
@@ -509,7 +469,7 @@
         "kind": 6,
         "importPath": "tareas.views",
         "description": "tareas.views",
-        "peekOfCode": "class ActualizarTarea(APIView):\n    def put(self, request, pk):\n        tarea = Tarea.objects.filter(pk=pk).first()\n        serializer = TareaSerializer(tarea,data=request.data)\n        if serializer.is_valid():\n            serializer.save()\n            return  Response(serializer.data, status=status.HTTP_200_OK)\n        return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)\n# Registro\n# class Registro(generics.CreateAPIView):",
+        "peekOfCode": "class ActualizarTarea(APIView):\n    def put(self, request, pk):\n        tarea = Tarea.objects.filter(pk=pk).first()\n        serializer = TareaSerializer(tarea,data=request.data)\n        if serializer.is_valid():\n            serializer.save()\n            return  Response(serializer.data, status=status.HTTP_200_OK)\n        return Response(serializer.errors, status=status.HTTP_404_NOT_FOUND)\nclass Registro(CreateAPIView):\n    serializer_class = UserRegistrationSerializer",
         "detail": "tareas.views",
         "documentation": {}
     },
@@ -518,7 +478,7 @@
         "kind": 6,
         "importPath": "tareas.views",
         "description": "tareas.views",
-        "peekOfCode": "class Registro(generics.CreateAPIView):\n    serializer_class = UserRegistrationSerializer\n    def create(self, request, *args, **kwargs):\n        serializer = self.get_serializer(data=request.data)\n        serializer.is_valid(raise_exception=True)\n        self.perform_create(serializer)\n        user = serializer.instance\n        user.is_staff = True\n        user.save()\n        response_data = {",
+        "peekOfCode": "class Registro(CreateAPIView):\n    serializer_class = UserRegistrationSerializer\n    def create(self, request, *args, **kwargs):\n        serializer = self.get_serializer(data=request.data)\n        serializer.is_valid(raise_exception=True)\n        self.perform_create(serializer)\n        user = serializer.instance\n        user.is_staff = True\n        user.save()\n        response_data = {",
         "detail": "tareas.views",
         "documentation": {}
     },
