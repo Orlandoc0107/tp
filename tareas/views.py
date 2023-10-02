@@ -5,12 +5,10 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from django.contrib.auth import authenticate
 from rest_framework.generics import CreateAPIView
-# from rest_framework import status
 from rest_framework.decorators import authentication_classes, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.views import TokenObtainPairView
-from rest_framework_simplejwt.authentication import JWTAuthentication  # Importa el módulo correcto
-from rest_framework_simplejwt.views import TokenObtainPairView  # Importa la vista correcta
+from rest_framework_simplejwt.authentication import JWTAuthentication 
 
 # Para ver Todas las Tareas 
 class TareaViewSet(viewsets.ModelViewSet): # ModelViewSet se usa importando (from rest_framework import viewsets)
@@ -19,8 +17,6 @@ class TareaViewSet(viewsets.ModelViewSet): # ModelViewSet se usa importando (fro
 
 
 #mostrar todas las Tareas 
-@authentication_classes([JWTAuthentication])
-@permission_classes([IsAuthenticated])
 class MostarTareas(APIView):
     @authentication_classes([JWTAuthentication])
     @permission_classes([IsAuthenticated])
@@ -114,7 +110,6 @@ class CustomTokenObtainPairView(TokenObtainPairView):
         return response
 
 # Obtener datos:
-# Obtener datos del usuario logueado
 @authentication_classes([JWTAuthentication])
 @permission_classes([IsAuthenticated])
 class Obtener_Datos(APIView):
@@ -129,27 +124,3 @@ class Obtener_Datos(APIView):
         }
         return Response(payload, status=status.HTTP_200_OK)
     
-    
-#Login de Usuario
-# class Login(APIView):
-#     def post(self, request):
-#         dato1 = request.data.get('username')
-#         dato2 = request.data.get('password')
-#         usuario = authenticate(username=dato1, password=dato2)
-
-#         if usuario:
-
-#             data = {
-#                 "id": usuario.id,
-#                 "usuario": usuario.username,
-#                 "nombre": usuario.first_name,
-#                 "apellido": usuario.last_name,
-#                 "email": usuario.email,  
-#             }
-
-#             response = Response(data, status=status.HTTP_200_OK)
-
-#             return response
-#         else:
-#             data = {"Error": "Credenciales Inválidas"}
-#             return Response(data, status=status.HTTP_400_BAD_REQUEST)
