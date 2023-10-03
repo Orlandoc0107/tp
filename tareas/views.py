@@ -130,36 +130,14 @@ class CustomTokenObtainPairView(TokenObtainPairView):
         if response.status_code == status.HTTP_200_OK:
             # Extrae el token de acceso (access token) del cuerpo de la respuesta
             access_token = response.data.get('access', None)
+            refresh_token = response.data.get('refresh', None)
             
             # Si se ha obtenido un token de acceso, devuélvelo en la respuesta personalizada
-            if access_token:
-                return Response({'access_token': access_token}, status=status.HTTP_200_OK)
+            if access_token and refresh_token:
+                return Response({'access_token': access_token, 'refresh_token': refresh_token}, status=status.HTTP_200_OK)
         
         # Si la solicitud de inicio de sesión no fue exitosa, devuelve la respuesta original
         return response
-    
-
-@authentication_classes([JWTAuthentication])
-@permission_classes([IsAuthenticated])
-class TokenRefreshView(APIView):
-    def post(self, request, *args, **kwargs):
-        # Obtener el token de actualización de la solicitud
-        refresh_token = request.data.get('refresh_token')
-
-        # Comprobar si se proporcionó un token de actualización
-        if not refresh_token:
-            return Response({'error': 'Se requiere un token de actualización'}, status=status.HTTP_400_BAD_REQUEST)
-
-        try:
-            # Intentar refrescar el token de acceso
-            refresh = RefreshToken(refresh_token)
-            access_token = str(refresh.access_token)
-
-            # Devolver el nuevo token de acceso en la respuesta
-            return Response({'access_token': access_token}, status=status.HTTP_200_OK)
-        except Exception as e:
-            # Manejar errores, por ejemplo, token de actualización inválido
-            return Response({'error': 'No se pudo refrescar el token de acceso'}, status=status.HTTP_400_BAD_REQUEST)
 
 
 @authentication_classes([JWTAuthentication])

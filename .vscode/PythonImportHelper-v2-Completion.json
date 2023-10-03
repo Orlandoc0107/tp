@@ -560,16 +560,7 @@
         "kind": 6,
         "importPath": "tareas.views",
         "description": "tareas.views",
-        "peekOfCode": "class CustomTokenObtainPairView(TokenObtainPairView):\n    def post(self, request, *args, **kwargs):\n        response = super(CustomTokenObtainPairView, self).post(request, *args, **kwargs)\n        # Comprueba si la solicitud de inicio de sesión fue exitosa\n        if response.status_code == status.HTTP_200_OK:\n            # Extrae el token de acceso (access token) del cuerpo de la respuesta\n            access_token = response.data.get('access', None)\n            # Si se ha obtenido un token de acceso, devuélvelo en la respuesta personalizada\n            if access_token:\n                return Response({'access_token': access_token}, status=status.HTTP_200_OK)",
-        "detail": "tareas.views",
-        "documentation": {}
-    },
-    {
-        "label": "TokenRefreshView",
-        "kind": 6,
-        "importPath": "tareas.views",
-        "description": "tareas.views",
-        "peekOfCode": "class TokenRefreshView(APIView):\n    def post(self, request, *args, **kwargs):\n        # Obtener el token de actualización de la solicitud\n        refresh_token = request.data.get('refresh_token')\n        # Comprobar si se proporcionó un token de actualización\n        if not refresh_token:\n            return Response({'error': 'Se requiere un token de actualización'}, status=status.HTTP_400_BAD_REQUEST)\n        try:\n            # Intentar refrescar el token de acceso\n            refresh = RefreshToken(refresh_token)",
+        "peekOfCode": "class CustomTokenObtainPairView(TokenObtainPairView):\n    def post(self, request, *args, **kwargs):\n        response = super(CustomTokenObtainPairView, self).post(request, *args, **kwargs)\n        # Comprueba si la solicitud de inicio de sesión fue exitosa\n        if response.status_code == status.HTTP_200_OK:\n            # Extrae el token de acceso (access token) del cuerpo de la respuesta\n            access_token = response.data.get('access', None)\n            refresh_token = response.data.get('refresh', None)\n            # Si se ha obtenido un token de acceso, devuélvelo en la respuesta personalizada\n            if access_token and refresh_token:",
         "detail": "tareas.views",
         "documentation": {}
     },
