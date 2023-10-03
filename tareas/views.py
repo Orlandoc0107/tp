@@ -3,12 +3,10 @@ from .models import Tarea
 from .serializers import TareaSerializer, UserRegistrationSerializer
 from rest_framework.response import Response
 from rest_framework.views import APIView
-from django.contrib.auth import authenticate
 from rest_framework.decorators import authentication_classes, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.views import TokenObtainPairView
 from rest_framework_simplejwt.authentication import JWTAuthentication  
-from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth.models import User
 
 

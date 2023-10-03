@@ -1,5 +1,7 @@
 # Nota : Importante 
 
+http://orlandodemontero.pythonanywhere.com/tareas/docs/
+
 Actualmente se estara realizando modificaciones para PythonAnywere
 
 version que uso
@@ -19,6 +21,7 @@ pip install coreapi
 pip install setuptools
 
 migrar bien las tablas.
+
 python manage.py makemigrations
 
 python manage.py migrate

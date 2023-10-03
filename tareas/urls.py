@@ -1,4 +1,4 @@
-from django.urls import path, include
+from django.urls import path
 from rest_framework import routers
 from rest_framework.documentation import include_docs_urls
 from django.contrib import admin 
@@ -7,7 +7,6 @@ from tareas.views import MostarTareas, CrearTarea, BorrarTarea, ActualizarTarea,
 from tareas.views import Registro
 from .views import CustomTokenObtainPairView, Obtener_Datos
 from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
     TokenRefreshView,
 )
 
