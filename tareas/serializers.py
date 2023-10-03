@@ -18,7 +18,6 @@ class TareaSerializer(serializers.ModelSerializer):
 
 # Class para Usuario
 class UserRegistrationSerializer(serializers.ModelSerializer):
-    #Campos que obligatoriamente debe ser completados.
     password = serializers.CharField(write_only=True, required=True, style={'input_type': 'password'})
     email = serializers.EmailField(required=True)
     username = serializers.CharField(required=True)

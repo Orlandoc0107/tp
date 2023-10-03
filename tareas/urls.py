@@ -18,12 +18,13 @@ router.register(r'tareas', views.TareaViewSet, basename='tarea')
 urlpatterns = [
        path('admin/', admin.site.urls),
        path('docs/', include_docs_urls(title="API Rest")),
-       path('detalles/<int:pk>/', DetallesTarea.as_view()), #GET
-       path('mostrar/', MostarTareas.as_view()), # GET
+       path('ver/<int:pk>/', DetallesTarea.as_view()), #GET
+       path('vertodo/', MostarTareas.as_view()), # GET
        path('crear/', CrearTarea.as_view()), # POST
        path('borrar/<int:pk>/', BorrarTarea.as_view()), # DELETE / pk= es la id de la tarea en la url
-       path('ActualizarTarea/<int:pk>/', ActualizarTarea.as_view()), # PUT / pk= es id de la tarea en la url
+       path('actualizar/<int:pk>/', ActualizarTarea.as_view()), # PUT / pk= es id de la tarea en la url
        path('registro/', Registro.as_view(), name='register'), # POST
-       path('token/', CustomTokenObtainPairView.as_view()), #POST
+       path('login/', CustomTokenObtainPairView.as_view()), #POST
        path('datos/', Obtener_Datos.as_view()), #GET
+       path('refres/', TokenRefreshView.as_view()), #POST
 ]

@@ -67,8 +67,10 @@ MIDDLEWARE = [
 CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOW_METHODS = [
-    'GET',
-    'POST',
+    "DELETE",
+    "GET",
+    "POST",
+    "PUT",
 ]
 
 ROOT_URLCONF = 'tp.urls'

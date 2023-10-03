@@ -4,13 +4,16 @@ from .serializers import TareaSerializer, UserRegistrationSerializer
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from django.contrib.auth import authenticate
-from rest_framework.generics import CreateAPIView
-from rest_framework import status
 from rest_framework.decorators import authentication_classes, permission_classes
 from rest_framework.permissions import IsAuthenticated
 from rest_framework_simplejwt.views import TokenObtainPairView
-from rest_framework_simplejwt.authentication import JWTAuthentication  # Importa el módulo correcto
-from rest_framework_simplejwt.views import TokenObtainPairView  # Importa la vista correcta
+from rest_framework_simplejwt.authentication import JWTAuthentication  
+from rest_framework_simplejwt.tokens import RefreshToken
+from django.contrib.auth.models import User
+
+
+
+
 
 # Para ver Todas las Tareas 
 class TareaViewSet(viewsets.ModelViewSet): # ModelViewSet se usa importando (from rest_framework import viewsets)
@@ -92,68 +95,82 @@ class ActualizarTarea(APIView):
 
 
     
-class Registro(CreateAPIView):
-    serializer_class = UserRegistrationSerializer
+class Registro(APIView):
+    def post(self, request, format=None):
+        serializer = UserRegistrationSerializer(data=request.data)
+        if serializer.is_valid():
+            # Verificar si el nombre de usuario y el correo electrónico ya están en uso
+            username = serializer.validated_data['username']
+            email = serializer.validated_data['email']
+            if User.objects.filter(username=username).exists():
+                return Response({'error': 'Este nombre de usuario ya está en uso.'}, status=status.HTTP_400_BAD_REQUEST)
+            if User.objects.filter(email=email).exists():
+                return Response({'error': 'Este correo electrónico ya está en uso.'}, status=status.HTTP_400_BAD_REQUEST)
+            
+            # Crear el usuario si no hay errores de duplicación
+            user = User.objects.create_user(
+                username=username,
+                first_name=serializer.validated_data['first_name'],
+                last_name=serializer.validated_data['last_name'],
+                email=email,
+                password=serializer.validated_data['password']
+            )
+            return Response({'message': 'Usuario creado exitosamente.'}, status=status.HTTP_201_CREATED)
+        else:
+            # Manejar errores de validación del serializador
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    def create(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
 
-        self.perform_create(serializer)
-        user = serializer.instance
-
-        user.is_staff = True
-        user.save()
-
-        response_data = {
-            'message': 'Usuario creado exitosamente.',
-        }
-
-        return Response(response_data, status=status.HTTP_201_CREATED)
-
-# Obtener token JWT
+#Login Envia el Token
 class CustomTokenObtainPairView(TokenObtainPairView):
     def post(self, request, *args, **kwargs):
         response = super(CustomTokenObtainPairView, self).post(request, *args, **kwargs)
+        
+        # Comprueba si la solicitud de inicio de sesión fue exitosa
+        if response.status_code == status.HTTP_200_OK:
+            # Extrae el token de acceso (access token) del cuerpo de la respuesta
+            access_token = response.data.get('access', None)
+            
+            # Si se ha obtenido un token de acceso, devuélvelo en la respuesta personalizada
+            if access_token:
+                return Response({'access_token': access_token}, status=status.HTTP_200_OK)
+        
+        # Si la solicitud de inicio de sesión no fue exitosa, devuelve la respuesta original
         return response
+    
 
-# Obtener datos:
-# Obtener datos del usuario logueado
+@authentication_classes([JWTAuthentication])
+@permission_classes([IsAuthenticated])
+class TokenRefreshView(APIView):
+    def post(self, request, *args, **kwargs):
+        # Obtener el token de actualización de la solicitud
+        refresh_token = request.data.get('refresh_token')
+
+        # Comprobar si se proporcionó un token de actualización
+        if not refresh_token:
+            return Response({'error': 'Se requiere un token de actualización'}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            # Intentar refrescar el token de acceso
+            refresh = RefreshToken(refresh_token)
+            access_token = str(refresh.access_token)
+
+            # Devolver el nuevo token de acceso en la respuesta
+            return Response({'access_token': access_token}, status=status.HTTP_200_OK)
+        except Exception as e:
+            # Manejar errores, por ejemplo, token de actualización inválido
+            return Response({'error': 'No se pudo refrescar el token de acceso'}, status=status.HTTP_400_BAD_REQUEST)
+
+
 @authentication_classes([JWTAuthentication])
 @permission_classes([IsAuthenticated])
 class Obtener_Datos(APIView):
     def get(self, request):
         user = request.user
         payload = {
-            "id": user.id,
             "usuario": user.username,
             "nombre": user.first_name,
             "apellido": user.last_name,
             "email": user.email,
         }
         return Response(payload, status=status.HTTP_200_OK)
-    
-    
-#Login de Usuario
-# class Login(APIView):
-#     def post(self, request):
-#         dato1 = request.data.get('username')
-#         dato2 = request.data.get('password')
-#         usuario = authenticate(username=dato1, password=dato2)
-
-#         if usuario:
-
-#             data = {
-#                 "id": usuario.id,
-#                 "usuario": usuario.username,
-#                 "nombre": usuario.first_name,
-#                 "apellido": usuario.last_name,
-#                 "email": usuario.email,  
-#             }
-
-#             response = Response(data, status=status.HTTP_200_OK)
-
-#             return response
-#         else:
-#             data = {"Error": "Credenciales Inválidas"}
-#             return Response(data, status=status.HTTP_400_BAD_REQUEST)

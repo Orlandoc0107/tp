@@ -130,6 +130,14 @@
         "documentation": {}
     },
     {
+        "label": "User",
+        "importPath": "django.contrib.auth.models",
+        "description": "django.contrib.auth.models",
+        "isExtraImport": true,
+        "detail": "django.contrib.auth.models",
+        "documentation": {}
+    },
+    {
         "label": "serializers",
         "importPath": "rest_framework",
         "description": "rest_framework",
@@ -290,14 +298,6 @@
         "documentation": {}
     },
     {
-        "label": "TokenObtainPairView",
-        "importPath": "rest_framework_simplejwt.views",
-        "description": "rest_framework_simplejwt.views",
-        "isExtraImport": true,
-        "detail": "rest_framework_simplejwt.views",
-        "documentation": {}
-    },
-    {
         "label": "Response",
         "importPath": "rest_framework.response",
         "description": "rest_framework.response",
@@ -319,14 +319,6 @@
         "description": "django.contrib.auth",
         "isExtraImport": true,
         "detail": "django.contrib.auth",
-        "documentation": {}
-    },
-    {
-        "label": "CreateAPIView",
-        "importPath": "rest_framework.generics",
-        "description": "rest_framework.generics",
-        "isExtraImport": true,
-        "detail": "rest_framework.generics",
         "documentation": {}
     },
     {
@@ -359,6 +351,14 @@
         "description": "rest_framework_simplejwt.authentication",
         "isExtraImport": true,
         "detail": "rest_framework_simplejwt.authentication",
+        "documentation": {}
+    },
+    {
+        "label": "RefreshToken",
+        "importPath": "rest_framework_simplejwt.tokens",
+        "description": "rest_framework_simplejwt.tokens",
+        "isExtraImport": true,
+        "detail": "rest_framework_simplejwt.tokens",
         "documentation": {}
     },
     {
@@ -470,7 +470,7 @@
         "kind": 6,
         "importPath": "tareas.serializers",
         "description": "tareas.serializers",
-        "peekOfCode": "class UserRegistrationSerializer(serializers.ModelSerializer):\n    #Campos que obligatoriamente debe ser completados.\n    password = serializers.CharField(write_only=True, required=True, style={'input_type': 'password'})\n    email = serializers.EmailField(required=True)\n    username = serializers.CharField(required=True)\n    first_name = serializers.CharField(required=True)\n    last_name = serializers.CharField(required=True)\n    class Meta:\n        model = User\n        fields = ('username', 'first_name', 'last_name', 'email', 'password')",
+        "peekOfCode": "class UserRegistrationSerializer(serializers.ModelSerializer):\n    password = serializers.CharField(write_only=True, required=True, style={'input_type': 'password'})\n    email = serializers.EmailField(required=True)\n    username = serializers.CharField(required=True)\n    first_name = serializers.CharField(required=True)\n    last_name = serializers.CharField(required=True)\n    class Meta:\n        model = User\n        fields = ('username', 'first_name', 'last_name', 'email', 'password')\n    def validate_username(self, value):",
         "detail": "tareas.serializers",
         "documentation": {}
     },
@@ -479,7 +479,7 @@
         "kind": 5,
         "importPath": "tareas.urls",
         "description": "tareas.urls",
-        "peekOfCode": "router = routers.DefaultRouter()\nrouter.register(r'tareas', views.TareaViewSet, basename='tarea')\nurlpatterns = [\n       path('admin/', admin.site.urls),\n       path('docs/', include_docs_urls(title=\"API Rest\")),\n       path('detalles-tarea/<int:pk>/', DetallesTarea.as_view()), #GET\n       path('mostrar-tareas/', MostarTareas.as_view()), # GET\n       path('crear-tarea/', CrearTarea.as_view()), # POST\n       path('borrar-tarea/<int:pk>/', BorrarTarea.as_view()), # DELETE / pk= es la id de la tarea en la url\n       path('actualiza-tarea/<int:pk>/', ActualizarTarea.as_view()), # PUT / pk= es id de la tarea en la url",
+        "peekOfCode": "router = routers.DefaultRouter()\nrouter.register(r'tareas', views.TareaViewSet, basename='tarea')\nurlpatterns = [\n       path('admin/', admin.site.urls),\n       path('docs/', include_docs_urls(title=\"API Rest\")),\n       path('ver/<int:pk>/', DetallesTarea.as_view()), #GET\n       path('vertodo/', MostarTareas.as_view()), # GET\n       path('crear/', CrearTarea.as_view()), # POST\n       path('borrar/<int:pk>/', BorrarTarea.as_view()), # DELETE / pk= es la id de la tarea en la url\n       path('actualizar/<int:pk>/', ActualizarTarea.as_view()), # PUT / pk= es id de la tarea en la url",
         "detail": "tareas.urls",
         "documentation": {}
     },
@@ -488,7 +488,7 @@
         "kind": 5,
         "importPath": "tareas.urls",
         "description": "tareas.urls",
-        "peekOfCode": "urlpatterns = [\n       path('admin/', admin.site.urls),\n       path('docs/', include_docs_urls(title=\"API Rest\")),\n       path('detalles-tarea/<int:pk>/', DetallesTarea.as_view()), #GET\n       path('mostrar-tareas/', MostarTareas.as_view()), # GET\n       path('crear-tarea/', CrearTarea.as_view()), # POST\n       path('borrar-tarea/<int:pk>/', BorrarTarea.as_view()), # DELETE / pk= es la id de la tarea en la url\n       path('actualiza-tarea/<int:pk>/', ActualizarTarea.as_view()), # PUT / pk= es id de la tarea en la url\n       path('registro/', Registro.as_view(), name='register'), # POST\n       path('token/', CustomTokenObtainPairView.as_view()), #POST",
+        "peekOfCode": "urlpatterns = [\n       path('admin/', admin.site.urls),\n       path('docs/', include_docs_urls(title=\"API Rest\")),\n       path('ver/<int:pk>/', DetallesTarea.as_view()), #GET\n       path('vertodo/', MostarTareas.as_view()), # GET\n       path('crear/', CrearTarea.as_view()), # POST\n       path('borrar/<int:pk>/', BorrarTarea.as_view()), # DELETE / pk= es la id de la tarea en la url\n       path('actualizar/<int:pk>/', ActualizarTarea.as_view()), # PUT / pk= es id de la tarea en la url\n       path('registro/', Registro.as_view(), name='register'), # POST\n       path('login/', CustomTokenObtainPairView.as_view()), #POST",
         "detail": "tareas.urls",
         "documentation": {}
     },
@@ -515,7 +515,7 @@
         "kind": 6,
         "importPath": "tareas.views",
         "description": "tareas.views",
-        "peekOfCode": "class CrearTarea(APIView):\n    def post(self, request, format=None):\n        serializer = TareaSerializer(data=request.data) \n        if serializer.is_valid(): \n            tarea = serializer.save(user=request.user)  # Asigna el usuario actual a la tarea\n            return Response(TareaSerializer(tarea).data, status=status.HTTP_201_CREATED) \n        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)\n# Borrar Tarea\nclass BorrarTarea(APIView):\n    @authentication_classes([JWTAuthentication])",
+        "peekOfCode": "class CrearTarea(APIView):\n    def post(self, request, format=None):\n        serializer = TareaSerializer(data=request.data) \n        if serializer.is_valid(): \n            tarea = serializer.save(user=request.user)  # Asigna el usuario actual a la tarea\n            return Response(TareaSerializer(tarea).data, status=status.HTTP_201_CREATED) \n        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)\n# Borrar Tarea\n@authentication_classes([JWTAuthentication])\n@permission_classes([IsAuthenticated])",
         "detail": "tareas.views",
         "documentation": {}
     },
@@ -524,7 +524,7 @@
         "kind": 6,
         "importPath": "tareas.views",
         "description": "tareas.views",
-        "peekOfCode": "class BorrarTarea(APIView):\n    @authentication_classes([JWTAuthentication])\n    @permission_classes([IsAuthenticated])\n    def delete(self, request, pk):\n        tarea = Tarea.objects.filter(pk=pk, user=request.user).first()\n        if not tarea:\n            return Response({\"error\": \"La tarea no existe o no tienes permiso para eliminarla\"}, status=status.HTTP_404_NOT_FOUND)\n        serializer = TareaSerializer(tarea)\n        tarea.delete()\n        return Response(serializer.data, status=status.HTTP_200_OK)",
+        "peekOfCode": "class BorrarTarea(APIView):\n    authentication_classes = [JWTAuthentication]\n    permission_classes = [IsAuthenticated]\n    def delete(self, request, pk):\n        tarea = Tarea.objects.filter(pk=pk, user=request.user).first()\n        if not tarea:\n            return Response({\"error\": \"La tarea no existe o no tienes permiso para eliminarla\"}, status=status.HTTP_404_NOT_FOUND)\n        serializer = TareaSerializer(tarea)\n        tarea.delete()\n        return Response(serializer.data, status=status.HTTP_200_OK)",
         "detail": "tareas.views",
         "documentation": {}
     },
@@ -542,7 +542,7 @@
         "kind": 6,
         "importPath": "tareas.views",
         "description": "tareas.views",
-        "peekOfCode": "class ActualizarTarea(APIView):\n    @authentication_classes([JWTAuthentication])\n    @permission_classes([IsAuthenticated])\n    def put(self, request, pk):\n        tarea = Tarea.objects.filter(pk=pk, user=request.user).first()\n        if not tarea:\n            return Response({\"error\": \"La tarea no existe o no tienes permiso para actualizarla\"}, status=status.HTTP_404_NOT_FOUND)\n        serializer = TareaSerializer(tarea, data=request.data)\n        if serializer.is_valid():\n            serializer.save()",
+        "peekOfCode": "class ActualizarTarea(APIView):\n    def put(self, request, pk):\n        tarea = Tarea.objects.filter(pk=pk, user=request.user).first()\n        if not tarea:\n            return Response({\"error\": \"La tarea no existe o no tienes permiso para actualizarla\"}, status=status.HTTP_404_NOT_FOUND)\n        serializer = TareaSerializer(tarea, data=request.data)\n        if serializer.is_valid():\n            serializer.save()\n            return Response(serializer.data, status=status.HTTP_200_OK)\n        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)",
         "detail": "tareas.views",
         "documentation": {}
     },
@@ -551,7 +551,7 @@
         "kind": 6,
         "importPath": "tareas.views",
         "description": "tareas.views",
-        "peekOfCode": "class Registro(CreateAPIView):\n    serializer_class = UserRegistrationSerializer\n    def create(self, request, *args, **kwargs):\n        serializer = self.get_serializer(data=request.data)\n        serializer.is_valid(raise_exception=True)\n        self.perform_create(serializer)\n        user = serializer.instance\n        user.is_staff = True\n        user.save()\n        response_data = {",
+        "peekOfCode": "class Registro(APIView):\n    def post(self, request, format=None):\n        serializer = UserRegistrationSerializer(data=request.data)\n        if serializer.is_valid():\n            # Verificar si el nombre de usuario y el correo electrónico ya están en uso\n            username = serializer.validated_data['username']\n            email = serializer.validated_data['email']\n            if User.objects.filter(username=username).exists():\n                return Response({'error': 'Este nombre de usuario ya está en uso.'}, status=status.HTTP_400_BAD_REQUEST)\n            if User.objects.filter(email=email).exists():",
         "detail": "tareas.views",
         "documentation": {}
     },
@@ -560,7 +560,16 @@
         "kind": 6,
         "importPath": "tareas.views",
         "description": "tareas.views",
-        "peekOfCode": "class CustomTokenObtainPairView(TokenObtainPairView):\n    def post(self, request, *args, **kwargs):\n        response = super(CustomTokenObtainPairView, self).post(request, *args, **kwargs)\n        return response\n# Obtener datos:\n# Obtener datos del usuario logueado\n@authentication_classes([JWTAuthentication])\n@permission_classes([IsAuthenticated])\nclass Obtener_Datos(APIView):\n    def get(self, request):",
+        "peekOfCode": "class CustomTokenObtainPairView(TokenObtainPairView):\n    def post(self, request, *args, **kwargs):\n        response = super(CustomTokenObtainPairView, self).post(request, *args, **kwargs)\n        # Comprueba si la solicitud de inicio de sesión fue exitosa\n        if response.status_code == status.HTTP_200_OK:\n            # Extrae el token de acceso (access token) del cuerpo de la respuesta\n            access_token = response.data.get('access', None)\n            # Si se ha obtenido un token de acceso, devuélvelo en la respuesta personalizada\n            if access_token:\n                return Response({'access_token': access_token}, status=status.HTTP_200_OK)",
+        "detail": "tareas.views",
+        "documentation": {}
+    },
+    {
+        "label": "TokenRefreshView",
+        "kind": 6,
+        "importPath": "tareas.views",
+        "description": "tareas.views",
+        "peekOfCode": "class TokenRefreshView(APIView):\n    def post(self, request, *args, **kwargs):\n        # Obtener el token de actualización de la solicitud\n        refresh_token = request.data.get('refresh_token')\n        # Comprobar si se proporcionó un token de actualización\n        if not refresh_token:\n            return Response({'error': 'Se requiere un token de actualización'}, status=status.HTTP_400_BAD_REQUEST)\n        try:\n            # Intentar refrescar el token de acceso\n            refresh = RefreshToken(refresh_token)",
         "detail": "tareas.views",
         "documentation": {}
     },
@@ -569,7 +578,7 @@
         "kind": 6,
         "importPath": "tareas.views",
         "description": "tareas.views",
-        "peekOfCode": "class Obtener_Datos(APIView):\n    def get(self, request):\n        user = request.user\n        payload = {\n            \"id\": user.id,\n            \"usuario\": user.username,\n            \"nombre\": user.first_name,\n            \"apellido\": user.last_name,\n            \"email\": user.email,\n        }",
+        "peekOfCode": "class Obtener_Datos(APIView):\n    def get(self, request):\n        user = request.user\n        payload = {\n            \"usuario\": user.username,\n            \"nombre\": user.first_name,\n            \"apellido\": user.last_name,\n            \"email\": user.email,\n        }\n        return Response(payload, status=status.HTTP_200_OK)",
         "detail": "tareas.views",
         "documentation": {}
     },
@@ -641,7 +650,7 @@
         "kind": 5,
         "importPath": "tp.settings",
         "description": "tp.settings",
-        "peekOfCode": "CORS_ALLOW_ALL_ORIGINS = True\nCORS_ALLOW_METHODS = [\n    'GET',\n    'POST',\n]\nROOT_URLCONF = 'tp.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],",
+        "peekOfCode": "CORS_ALLOW_ALL_ORIGINS = True\nCORS_ALLOW_METHODS = [\n    \"DELETE\",\n    \"GET\",\n    \"POST\",\n    \"PUT\",\n]\nROOT_URLCONF = 'tp.urls'\nTEMPLATES = [\n    {",
         "detail": "tp.settings",
         "documentation": {}
     },
@@ -650,7 +659,7 @@
         "kind": 5,
         "importPath": "tp.settings",
         "description": "tp.settings",
-        "peekOfCode": "CORS_ALLOW_METHODS = [\n    'GET',\n    'POST',\n]\nROOT_URLCONF = 'tp.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',\n        'DIRS': [],\n        'APP_DIRS': True,",
+        "peekOfCode": "CORS_ALLOW_METHODS = [\n    \"DELETE\",\n    \"GET\",\n    \"POST\",\n    \"PUT\",\n]\nROOT_URLCONF = 'tp.urls'\nTEMPLATES = [\n    {\n        'BACKEND': 'django.template.backends.django.DjangoTemplates',",
         "detail": "tp.settings",
         "documentation": {}
     },
